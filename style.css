@@ -190,7 +190,7 @@ button {
 .informations_tafel {
   display: none;
   text-align: center;
-  padding: 20px 30px;
+  padding: 20px 0;
   color: #fff;
   font-size: 30px;
   position: absolute;
