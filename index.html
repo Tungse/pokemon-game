@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Spiel</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="hintergrund">
+      <div class="oben"></div>
+      <div class="unten"></div>
+    </div>
+    <div class="informations_tafel"></div>
+    <div class="arena">
+      <div class="wuerfel show-1" onclick="wuerfeln()">
+        <div class='side one'>
+          <div class="dot one-1"></div>
+        </div>
+        <div class='side two'>
+          <div class="dot two-1"></div>
+          <div class="dot two-2"></div>
+        </div>
+        <div class='side three'>
+          <div class="dot three-1"></div>
+          <div class="dot three-2"></div>
+          <div class="dot three-3"></div>
+        </div>
+        <div class='side four'>
+          <div class="dot four-1"></div>
+          <div class="dot four-2"></div>
+          <div class="dot four-3"></div>
+          <div class="dot four-4"></div>
+        </div>
+        <div class='side five'>
+          <div class="dot five-1"></div>
+          <div class="dot five-2"></div>
+          <div class="dot five-3"></div>
+          <div class="dot five-4"></div>
+          <div class="dot five-5"></div>
+        </div>
+        <div class='side six'>
+          <div class="dot six-1"></div>
+          <div class="dot six-2"></div>
+          <div class="dot six-3"></div>
+          <div class="dot six-4"></div>
+          <div class="dot six-5"></div>
+          <div class="dot six-6"></div>
+        </div>
+      </div>
+      <div class="spieler_1">
+        <div class="pokemon_leiste">
+          <div class="pokemon_hp"><span></span></div>
+          <div class="pokemon_super_attacke"><span></span></div>
+        </div>
+        <div class="pokemon_schaden"></div>
+        <div class="pokemon_bild"></div>
+        <button onclick="pokemon_auswaehlen(1)">Pokemon auswählen</button>
+      </div>
+      <div class="spieler_2">
+        <div class="pokemon_leiste">
+          <div class="pokemon_hp"><span></span></div>
+          <div class="pokemon_super_attacke"><span></span></div>
+        </div>
+        <div class="pokemon_schaden"></div>
+        <div class="pokemon_bild"></div>
+        <button onclick="pokemon_auswaehlen(2)">Pokemon auswählen</button>
+      </div>
+      <div class="pokemon_auswaehlen_liste">
+        <div class="pokemon_liste"></div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

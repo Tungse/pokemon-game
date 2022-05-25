@@ -1,0 +1,315 @@
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, -1px, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 2px, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, -4px, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 4px, 0);
+  }
+}
+body {
+  font-family: monospace;
+  font-weight: bold;
+}
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  z-index: 30;
+}
+.hintergrund {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.oben {
+  width: 100%;
+  height: 50%;
+  background: #cc0000;
+  border-bottom: 5px solid #000;
+}
+.unten {
+  width: 100%;
+  height: 50%;
+  background: #fff;
+  border-top: 5px solid #000;
+}
+.arena {
+  position: relative;
+  z-index: 20;
+  background: url("./bilder/arena.jpg");
+  width: 800px;
+  height: 450px;
+  margin: 100px auto;
+  border: 10px solid #000;
+  border-radius: 50px;
+}
+.super_attacke_voll .arena::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgb(255 0 0 / 80%);
+  filter: blur(3px);
+  background: inherit;
+  border-radius: 40px;
+}
+
+.spieler_1 {
+  position: absolute;
+  bottom: 10px;
+  left: 155px;
+  width: 300px;
+  text-align: center;
+  transition: all .1s;
+  z-index: 12;
+}
+.spieler_1.angreifen {
+  bottom: 100px;
+  left: 340px;
+  width: 200px;
+}
+.spieler_2 {
+  position: absolute;
+  bottom: 115px;
+  left: 350px;
+  width: 180px;
+  text-align: center;
+  transition: all .1s;
+  z-index: 11;
+}
+.spieler_2.angreifen {
+  bottom: 20px;
+  left: 165px;
+  width: 280px;
+}
+.spieler_1::before {
+  content: "Nam";
+}
+.spieler_2::before {
+  content: "Hai An";
+}
+.spieler_1::before,
+.spieler_2::before {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+.spieler_1 .pokemon_bild img,
+.spieler_2 .pokemon_bild img {
+  width: 60%;
+}
+.spieler_1 .pokemon_bild img {
+  transform: scaleX(-1);
+}
+.pokemon_bild.geschlagen {
+  animation: shake .8s;
+}
+
+.pokemon_leiste {
+  width: 50%;
+  display: none;
+  margin: 0 auto;
+}
+.pokemon_leiste.anzeigen {
+  display: block;
+}
+.pokemon_hp,
+.pokemon_super_attacke {
+  height: 10px;
+  border: 1px solid #fff;
+  background: #fff;
+  width: 100%;
+}
+.pokemon_hp {
+  border-bottom: 0;
+}
+.pokemon_super_attacke {
+  height: 2px;
+}
+.pokemon_super_attacke span,
+.pokemon_hp span {
+  background: green;
+  height: 100%;
+  display: block;
+  transition: width 1s;
+}
+.pokemon_super_attacke span {
+  width: 0;
+  background: #cc0000;
+}
+
+.pokemon_schaden {
+  opacity: 1;
+  visibility: hidden;
+  color: #cc0000;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+.pokemon_schaden.anzeigen {
+  top: -50px;
+  opacity: 0;
+  visibility: visible;
+  transition: all 1s linear;
+}
+.super_attacke_voll .pokemon_schaden {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.pokemon_auswaehlen_liste {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 800px;
+  height: 450px;
+  background: #ffde00;
+  border-radius: 50px;
+  padding: 20px;
+  overflow: auto;
+  z-index: 20;
+}
+.pokemon_auswaehlen_liste.anzeigen {
+  display: block;
+}
+.pokemon_auswaehlen_liste img {
+  width: 200px;
+  cursor: pointer;
+}
+.pokemon_auswaehlen_liste img.ausgewaehlt {
+  opacity: .2;
+}
+
+.informations_tafel {
+  display: none;
+  text-align: center;
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+}
+.informations_tafel.anzeigen {
+  display: block;
+}
+.informations_tafel.gewinner_gefunden {
+  top: calc(50% - 50px);
+  font-size: 60px;
+  color: #cc0000;
+  background: #fff;
+}
+
+.wuerfel {
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 50px);
+  cursor: pointer;
+}
+.wuerfel.anzeigen {
+  display: block;
+}
+.wuerfel.schuettel {
+  animation: shake .5s;
+}
+.wuerfel.deaktivieren {
+  cursor: wait;
+  opacity: .6;
+}
+
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: -10px 5px 5px -10px;
+  border-radius: 20px;
+  background-color: #cc0000;
+}
+.side {
+  opacity: 0;
+  position: absolute;
+  background-color: #ffF;
+  border-radius:5px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  transition: all 1s;
+}
+.super_attacke_voll .dot {
+  background-color: #fff;
+}
+.super_attacke_voll .side {
+  background-color: #cc0000;
+}
+.show-1 .side.one {
+  display: block;
+  opacity: 1;
+}
+.show-2 .side.two {
+  display: block;
+  opacity: 1;
+}
+.show-3 .side.three {
+  display: block;
+  opacity: 1;
+}
+.show-4 .side.four {
+  display: block;
+  opacity: 1;
+}
+.show-5 .side.five {
+  display: block;
+  opacity: 1;
+}
+.show-6 .side.six {
+  display: block;
+  opacity: 1;
+}
+.two-1, .three-1, .four-1, .five-1, .six-1 {
+  top: 20%;
+  left: 20%;
+}
+.four-3, .five-3, .six-4 {
+  top: 20%;
+  left: 80%;
+}
+.one-1, .three-2, .five-5 {
+  top: 50%;
+  left: 50%;
+}
+.four-2, .five-2, .six-3 {
+  top: 80%;
+  left: 20%;
+}
+.two-2, .three-3, .four-4, .five-4, .six-6 {
+  top: 80%;
+  left: 80%;
+}
+.six-2 {
+  top: 50%;
+  left: 20%;
+}
+.six-5 {
+  top: 50%;
+  left: 80%;
+}
