@@ -3,21 +3,29 @@ const spieler_taschen = {
   2: [],
 }
 const pokemons = [
-  {name: 'letarking', hp: 4431, angriff: 290, verteidigung: 166, type: ['normal'], effektiv: ['geist']},
   {name: 'mewtu', hp: 4178, angriff: 300, verteidigung: 182, type: ['psycho'], effektiv: ['kampf', 'psycho']},
-  {name: 'groudon', hp: 4115, angriff: 270, verteidigung: 228, type: ['boden'], effektiv: ['blitz', 'stein', 'gift']},
-  {name: 'kyogre', hp: 4115, angriff: 270, verteidigung: 228, type: ['wasser'], effektiv: ['boden', 'feuer']},
-  {name: 'zekrom', hp: 4038, angriff: 275, verteidigung: 211, type: ['blitz', 'drache'], effektiv: ['wasser', 'flug', 'drache']},
   {name: 'reshiram', hp: 4038, angriff: 275, verteidigung: 211, type: ['feuer', 'drache'], effektiv: ['pflanze', 'eis', 'käfer', 'stahl', 'drache']},
   {name: 'dialga', hp: 4038, angriff: 275, verteidigung: 211, type: ['drache', 'stahl'], effektiv: ['eis', 'stein', 'fee', 'drache']},
-  {name: 'meloetta', hp: 3972, angriff: 250, verteidigung: 225, type: ['normal', 'psycho'], effektiv: ['kampf', 'psycho', 'geist']},
   {name: 'knakrack', hp: 3962, angriff: 261, verteidigung: 193, type: ['boden', 'drache'], effektiv: ['blitz', 'stein', 'gift', 'drache']},
+  {name: 'rameidon', hp: 3298, angriff: 295, verteidigung: 109, type: ['stein'], effektiv: ['normal', 'flug', 'gift', 'feuer']},
+  {name: 'maxax', hp: 3593, angriff: 284, verteidigung: 172, type: ['drache'], effektiv: ['feuer', 'pflanze', 'wasser', 'blitz']},
+  {name: 'zekrom', hp: 4038, angriff: 275, verteidigung: 211, type: ['blitz', 'drache'], effektiv: ['wasser', 'flug', 'drache']},
+  {name: 'deoxys', hp: 3160, angriff: 345, verteidigung: 115, type: ['psycho'], effektiv: ['kampf', 'psycho']},
+  {name: 'aeropteryx', hp: 3331, angriff: 292, verteidigung: 139, type: ['stein', 'flug'], effektiv: ['kampf', 'boden', 'käfer', 'pflanze', 'normal', 'flug', 'gift', 'feuer']},
   {name: 'ho-oh', hp: 3863, angriff: 239, verteidigung: 244, type: ['feuer', 'flug'], effektiv: ['eis', 'pflanze', 'stahl', 'käfer', 'gift']},
   {name: 'rayquaza', hp: 3835, angriff: 284, verteidigung: 170, type: ['drache', 'flug'], effektiv: ['drache', 'kampf', 'pflanze', 'eis', 'käfer']},
+  {name: 'groudon', hp: 4115, angriff: 270, verteidigung: 228, type: ['boden'], effektiv: ['blitz', 'stein', 'gift']},
+  {name: 'kyogre', hp: 4115, angriff: 270, verteidigung: 228, type: ['wasser'], effektiv: ['boden', 'feuer']},
+  {name: 'zwirrfinst', hp: 2388, angriff: 180, verteidigung: 254, type: ['geist'], effektiv: ['normal', 'kampf', 'gift', 'käfer']},
+  {name: 'brutalanda', hp: 3749, angriff: 277, verteidigung: 168, type: ['drache', 'flug'], effektiv: ['drache', 'kampf', 'pflanze', 'eis', 'käfer']},
+  {name: 'skelabra', hp: 3268, angriff: 271, verteidigung: 182, type: ['geist', 'feuer'], effektiv: ['normal', 'kampf', 'gift', 'käfer', 'stahl', 'pflanze', 'eis', 'fee']},
   {name: 'despotar', hp: 3834, angriff: 251, verteidigung: 207, type: ['unlicht', 'stein'], effektiv: ['psycho', 'geist']},
+  {name: 'letarking', hp: 4431, angriff: 290, verteidigung: 166, type: ['normal'], effektiv: ['geist']},
+  {name: 'regigigas', hp: 4346, angriff: 287, verteidigung: 210, type: ['normal'], effektiv: ['geist']},
   {name: 'latios', hp: 3812, angriff: 268, verteidigung: 212, type: ['drache', 'psycho'], effektiv: ['kampf', 'psycho', 'drache']},
   {name: 'metagross', hp: 3791, angriff: 257, verteidigung: 228, type: ['stahl', 'psycho'], effektiv: ['kampf', 'psycho', 'fee', 'eis', 'stein']},
   {name: 'lugia', hp: 3703, angriff: 193, verteidigung: 310, type: ['flug', 'psycho'], effektiv: ['kampf', 'pflanze', 'käfer', 'psycho']},
+  {name: 'meloetta', hp: 3972, angriff: 250, verteidigung: 225, type: ['normal', 'psycho'], effektiv: ['kampf', 'psycho', 'geist']},
   {name: 'trikephalo', hp: 3625, angriff: 256, verteidigung: 188, type: ['unlicht', 'drache'], effektiv: ['drache', 'psycho', 'geist']},
   {name: 'melmetal', hp: 3599, angriff: 226, verteidigung: 190, type: ['stahl'], effektiv: ['eis', 'stein', 'fee']},
   {name: 'garados', hp: 3391, angriff: 237, verteidigung: 186, type: ['wasser', 'flug'], effektiv: ['boden', 'feuer', 'pflanze', 'kampf', 'käfer']},
@@ -25,7 +33,7 @@ const pokemons = [
   {name: 'mew', hp: 3265, angriff: 210, verteidigung: 210, type: ['psycho'], effektiv: ['kampf', 'psycho']},
 ]
 
-const max_pokemon_auswaehlbar = 3
+const max_pokemon_auswaehlbar = 4
 
 let ist_mitten_im_angriff = false
 let auswaehlende_spieler
@@ -118,6 +126,7 @@ const pokemon_platzieren = (spieler) => {
       pokemon.ist_im_kampf = false
     }
     if (!pokemon.ist_im_kampf && pokemon.hp > 0) {
+      pokemon_name_aktualisieren(pokemon, spieler)
       pokemon_einsetzen(pokemon, spieler)
       pokemon_hp_aufladen(spieler)
       break
@@ -137,6 +146,11 @@ const pokemon_einsetzen = (pokemon, spieler) => {
 const pokemon_hp_aufladen = (spieler) => {
   const pokemon_hp = document.querySelector(`.spieler_${spieler} .pokemon_hp`)
   pokemon_hp.querySelector('span').style.width = '100%'
+}
+
+const pokemon_name_aktualisieren = (pokemon, spieler) => {
+  const pokemon_name = document.querySelector(`.spieler_${spieler} .pokemon_name`)
+  pokemon_name.innerHTML = pokemon.name
 }
 
 const angreifer_auswaehlen = () => {
