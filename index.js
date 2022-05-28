@@ -1,32 +1,32 @@
 const pokemons = [
-  {name: 'mewtu', hp: 4178, angriff: 300, verteidigung: 182, super_attacke: 3, type: ['psycho'], effektiv: ['kampf', 'psycho']},
-  {name: 'reshiram', hp: 4038, angriff: 275, verteidigung: 211, super_attacke: 4, type: ['feuer', 'drache'], effektiv: ['pflanze', 'eis', 'käfer', 'stahl', 'drache']},
-  {name: 'dialga', hp: 4038, angriff: 275, verteidigung: 211, super_attacke: 5, type: ['drache', 'stahl'], effektiv: ['eis', 'stein', 'fee', 'drache']},
-  {name: 'knakrack', hp: 3962, angriff: 261, verteidigung: 193, super_attacke: 3, type: ['boden', 'drache'], effektiv: ['blitz', 'stein', 'gift', 'drache']},
-  {name: 'rameidon', hp: 3298, angriff: 295, verteidigung: 109, super_attacke: 3, type: ['stein'], effektiv: ['normal', 'flug', 'gift', 'feuer']},
-  {name: 'maxax', hp: 3593, angriff: 284, verteidigung: 172, super_attacke: 3, type: ['drache'], effektiv: ['feuer', 'pflanze', 'wasser', 'blitz']},
-  {name: 'zekrom', hp: 4038, angriff: 275, verteidigung: 211, super_attacke: 3, type: ['blitz', 'drache'], effektiv: ['wasser', 'flug', 'drache']},
-  {name: 'deoxys', hp: 3160, angriff: 345, verteidigung: 115, super_attacke: 3, type: ['psycho'], effektiv: ['kampf', 'psycho']},
   {name: 'aeropteryx', hp: 3331, angriff: 292, verteidigung: 139, super_attacke: 3, type: ['stein', 'flug'], effektiv: ['kampf', 'boden', 'käfer', 'pflanze', 'normal', 'flug', 'gift', 'feuer']},
-  {name: 'ho-oh', hp: 3863, angriff: 239, verteidigung: 244, super_attacke: 4, type: ['feuer', 'flug'], effektiv: ['eis', 'pflanze', 'stahl', 'käfer', 'gift']},
-  {name: 'rayquaza', hp: 3835, angriff: 284, verteidigung: 170, super_attacke: 3, type: ['drache', 'flug'], effektiv: ['drache', 'kampf', 'pflanze', 'eis', 'käfer']},
-  {name: 'groudon', hp: 4115, angriff: 270, verteidigung: 228, super_attacke: 5, type: ['boden'], effektiv: ['blitz', 'stein', 'gift']},
-  {name: 'kyogre', hp: 4115, angriff: 270, verteidigung: 228, super_attacke: 5, type: ['wasser'], effektiv: ['boden', 'feuer']},
-  {name: 'zwirrfinst', hp: 2388, angriff: 180, verteidigung: 254, super_attacke: 4, type: ['geist'], effektiv: ['normal', 'kampf', 'gift', 'käfer']},
   {name: 'brutalanda', hp: 3749, angriff: 277, verteidigung: 168, super_attacke: 4, type: ['drache', 'flug'], effektiv: ['drache', 'kampf', 'pflanze', 'eis', 'käfer']},
-  {name: 'skelabra', hp: 3268, angriff: 271, verteidigung: 182, super_attacke: 3, type: ['geist', 'feuer'], effektiv: ['normal', 'kampf', 'gift', 'käfer', 'stahl', 'pflanze', 'eis', 'fee']},
+  {name: 'deoxys', hp: 3160, angriff: 345, verteidigung: 115, super_attacke: 3, type: ['psycho'], effektiv: ['kampf', 'psycho']},
   {name: 'despotar', hp: 3834, angriff: 251, verteidigung: 207, super_attacke: 5, type: ['unlicht', 'stein'], effektiv: ['psycho', 'geist']},
-  {name: 'letarking', hp: 4431, angriff: 290, verteidigung: 166, super_attacke: 4, type: ['normal'], effektiv: ['geist']},
-  {name: 'regigigas', hp: 4346, angriff: 287, verteidigung: 210, super_attacke: 4, type: ['normal'], effektiv: ['geist']},
-  {name: 'latios', hp: 3812, angriff: 268, verteidigung: 212, super_attacke: 3, type: ['drache', 'psycho'], effektiv: ['kampf', 'psycho', 'drache']},
-  {name: 'metagross', hp: 3791, angriff: 257, verteidigung: 228, super_attacke: 4, type: ['stahl', 'psycho'], effektiv: ['kampf', 'psycho', 'fee', 'eis', 'stein']},
-  {name: 'lugia', hp: 3703, angriff: 193, verteidigung: 310, super_attacke: 4, type: ['flug', 'psycho'], effektiv: ['kampf', 'pflanze', 'käfer', 'psycho']},
-  {name: 'meloetta', hp: 3972, angriff: 250, verteidigung: 225, super_attacke: 3, type: ['normal', 'psycho'], effektiv: ['kampf', 'psycho', 'geist']},
-  {name: 'trikephalo', hp: 3625, angriff: 256, verteidigung: 188, super_attacke: 3, type: ['unlicht', 'drache'], effektiv: ['drache', 'psycho', 'geist']},
-  {name: 'melmetal', hp: 3599, angriff: 226, verteidigung: 190, super_attacke: 4, type: ['stahl'], effektiv: ['eis', 'stein', 'fee']},
+  {name: 'dialga', hp: 4038, angriff: 275, verteidigung: 211, super_attacke: 5, type: ['drache', 'stahl'], effektiv: ['eis', 'stein', 'fee', 'drache']},
   {name: 'garados', hp: 3391, angriff: 237, verteidigung: 186, super_attacke: 3, type: ['wasser', 'flug'], effektiv: ['boden', 'feuer', 'pflanze', 'kampf', 'käfer']},
-  {name: 'porygon-z', hp: 3266, angriff: 264, verteidigung: 150, super_attacke: 3, type: ['normal'], effektiv: ['geist']},
+  {name: 'groudon', hp: 4115, angriff: 270, verteidigung: 228, super_attacke: 5, type: ['boden'], effektiv: ['blitz', 'stein', 'gift']},
+  {name: 'ho-oh', hp: 3863, angriff: 239, verteidigung: 244, super_attacke: 4, type: ['feuer', 'flug'], effektiv: ['eis', 'pflanze', 'stahl', 'käfer', 'gift']},
+  {name: 'knakrack', hp: 3962, angriff: 261, verteidigung: 193, super_attacke: 3, type: ['boden', 'drache'], effektiv: ['blitz', 'stein', 'gift', 'drache']},
+  {name: 'kyogre', hp: 4115, angriff: 270, verteidigung: 228, super_attacke: 5, type: ['wasser'], effektiv: ['boden', 'feuer']},
+  {name: 'latios', hp: 3812, angriff: 268, verteidigung: 212, super_attacke: 3, type: ['drache', 'psycho'], effektiv: ['kampf', 'psycho', 'drache']},
+  {name: 'letarking', hp: 4431, angriff: 290, verteidigung: 166, super_attacke: 4, type: ['normal'], effektiv: ['geist']},
+  {name: 'lugia', hp: 3703, angriff: 193, verteidigung: 310, super_attacke: 4, type: ['flug', 'psycho'], effektiv: ['kampf', 'pflanze', 'käfer', 'psycho']},
+  {name: 'maxax', hp: 3593, angriff: 284, verteidigung: 172, super_attacke: 3, type: ['drache'], effektiv: ['feuer', 'pflanze', 'wasser', 'blitz']},
+  {name: 'melmetal', hp: 3599, angriff: 226, verteidigung: 190, super_attacke: 4, type: ['stahl'], effektiv: ['eis', 'stein', 'fee']},
+  {name: 'meloetta', hp: 3972, angriff: 250, verteidigung: 225, super_attacke: 3, type: ['normal', 'psycho'], effektiv: ['kampf', 'psycho', 'geist']},
+  {name: 'metagross', hp: 3791, angriff: 257, verteidigung: 228, super_attacke: 4, type: ['stahl', 'psycho'], effektiv: ['kampf', 'psycho', 'fee', 'eis', 'stein']},
   {name: 'mew', hp: 3265, angriff: 210, verteidigung: 210, super_attacke: 3, type: ['psycho'], effektiv: ['kampf', 'psycho']},
+  {name: 'mewtu', hp: 4178, angriff: 300, verteidigung: 182, super_attacke: 3, type: ['psycho'], effektiv: ['kampf', 'psycho']},
+  {name: 'porygon-z', hp: 3266, angriff: 264, verteidigung: 150, super_attacke: 3, type: ['normal'], effektiv: ['geist']},
+  {name: 'rameidon', hp: 3298, angriff: 295, verteidigung: 109, super_attacke: 3, type: ['stein'], effektiv: ['normal', 'flug', 'gift', 'feuer']},
+  {name: 'rayquaza', hp: 3835, angriff: 284, verteidigung: 170, super_attacke: 3, type: ['drache', 'flug'], effektiv: ['drache', 'kampf', 'pflanze', 'eis', 'käfer']},
+  {name: 'regigigas', hp: 4346, angriff: 287, verteidigung: 210, super_attacke: 4, type: ['normal'], effektiv: ['geist']},
+  {name: 'reshiram', hp: 4038, angriff: 275, verteidigung: 211, super_attacke: 4, type: ['feuer', 'drache'], effektiv: ['pflanze', 'eis', 'käfer', 'stahl', 'drache']},
+  {name: 'skelabra', hp: 3268, angriff: 271, verteidigung: 182, super_attacke: 3, type: ['geist', 'feuer'], effektiv: ['normal', 'kampf', 'gift', 'käfer', 'stahl', 'pflanze', 'eis', 'fee']},
+  {name: 'trikephalo', hp: 3625, angriff: 256, verteidigung: 188, super_attacke: 3, type: ['unlicht', 'drache'], effektiv: ['drache', 'psycho', 'geist']},
+  {name: 'zekrom', hp: 4038, angriff: 275, verteidigung: 211, super_attacke: 3, type: ['blitz', 'drache'], effektiv: ['wasser', 'flug', 'drache']},
+  {name: 'zwirrfinst', hp: 2388, angriff: 180, verteidigung: 254, super_attacke: 4, type: ['geist'], effektiv: ['normal', 'kampf', 'gift', 'käfer']},
 ]
 
 const spieler_taschen = {
@@ -74,6 +74,7 @@ const pokemon_liste_befuellen = () => {
     const pokemon_bild = document.createElement('img')
     pokemon_bild.src = `./bilder/${pokemon.name}.webp`
     pokemon_bild.alt = pokemon.name
+    pokemon_bild.title = pokemon.name
     pokemon_liste.appendChild(pokemon_bild)
 
     pokemon_bild.addEventListener('click', () => {
