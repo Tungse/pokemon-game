@@ -64,12 +64,12 @@ const sieger_mp3 = new Audio('mp3/sieger.mp3')
 
 const pokemon_auswaehlen = (spieler) => {
   auswaehlende_spieler = spieler
-  pokemon_liste_anzeigen()
+  pokemon_auswaehlen_mp3.play()
   pokemon_auswaehlen_liste.classList.add('anzeigen')
+  pokemon_liste_befuellen()
 }
 
-const pokemon_liste_anzeigen = () => {
-  pokemon_auswaehlen_mp3.play()
+const pokemon_liste_befuellen = () => {
   pokemons.forEach((pokemon) => {
     const pokemon_bild = document.createElement('img')
     pokemon_bild.src = `./bilder/${pokemon.name}.webp`
@@ -87,13 +87,12 @@ const waehle_pokemon_aus = (pokemon_bild) => {
   const pokemon = pokemons.find(e => e.name === pokemon_name)
   const wurde_schon_ausgewaehlt = spieler_taschen[auswaehlende_spieler].pokemons.find(pokemon => pokemon.name === pokemon_name)
 
+  pokemon_bild.classList.toggle('ausgewaehlt')
+
   if (wurde_schon_ausgewaehlt) {
     spieler_taschen[auswaehlende_spieler].pokemons = spieler_taschen[auswaehlende_spieler].pokemons.filter(pokemon => pokemon.name !== pokemon_name)
-    pokemon_bild.classList.toggle('ausgewaehlt')
   } else if (spieler_taschen[auswaehlende_spieler].pokemons.length < max_pokemon_auswaehlbar) {
-    const eigene_pokemon = JSON.parse(JSON.stringify(pokemon))
-    spieler_taschen[auswaehlende_spieler].pokemons.push(eigene_pokemon)
-    pokemon_bild.classList.toggle('ausgewaehlt')
+    spieler_taschen[auswaehlende_spieler].pokemons.push(JSON.parse(JSON.stringify(pokemon)))
   }
 
   ist_fertig_ausgewaehlt_worden()
@@ -103,20 +102,17 @@ const ist_fertig_ausgewaehlt_worden = () => {
   if (spieler_taschen[auswaehlende_spieler].pokemons.length === max_pokemon_auswaehlbar) {
     pokemon_auswaehlen_mp3.pause()
     pokemon_auswaehlen_mp3.currentTime = 0
-    pokemon_auswaehlen_liste.classList.remove('anzeigen', 'fertig_ausgewaehlt')
+    pokemon_auswaehlen_liste.classList.remove('anzeigen')
     pokemon_liste.innerHTML = ''
 
-    if (spieler_taschen[auswaehlende_spieler].pokemons.length > 0) {
-      document.querySelector(`.spieler_${auswaehlende_spieler} button`).style.display = 'none'
-      document.querySelector(`.spieler_${auswaehlende_spieler} .pokemon_leiste`).classList.add('anzeigen')
-      pokemon_platzieren(auswaehlende_spieler)
-    }
+    document.querySelector(`.spieler_${auswaehlende_spieler} button`).style.display = 'none'
+    document.querySelector(`.spieler_${auswaehlende_spieler} .pokemon_leiste`).classList.add('anzeigen')
+    pokemon_platzieren(auswaehlende_spieler)
+  }
+  if (spieler_taschen[1].pokemons.length === max_pokemon_auswaehlbar && spieler_taschen[2].pokemons.length === max_pokemon_auswaehlbar) {
+    wuerfel.classList.add('anzeigen')
 
-    if (spieler_taschen[1].pokemons.length > 0 && spieler_taschen[2].pokemons.length > 0) {
-      wuerfel.classList.add('anzeigen')
-
-      angreifer_auswaehlen()
-    }
+    angreifer_auswaehlen()
   }
 }
 
@@ -237,6 +233,17 @@ const super_attacke_leeren = (spieler) => {
   spieler_taschen[spieler].super_attacke = 0
 }
 
+const super_attacke_schaden_berechnen = (schaden, angreifer_pokemon) => {
+  if (ist_super_attacke_voll()) {
+    super_attacke_leeren(angreifende_spieler)
+    schaden = schaden * angreifer_pokemon.super_attacke
+  } else {
+    super_attacke_aufladen()
+  }
+
+  return schaden
+}
+
 const schlagen = ( wuerfel_zahl) => {
   const angreifer_pokemon = pokemon_von_angreifer()
   const verteidiger_pokemon = pokemon_von_verteidiger()
@@ -248,12 +255,7 @@ const schlagen = ( wuerfel_zahl) => {
   if (schaden < 0) {
     schaden = 0
   }
-  if (ist_super_attacke_voll()) {
-    super_attacke_leeren(angreifende_spieler)
-    schaden = schaden * angreifer_pokemon.super_attacke
-  } else {
-    super_attacke_aufladen()
-  }
+  schaden = super_attacke_schaden_berechnen(schaden, angreifer_pokemon)
   verteidiger_pokemon.hp = verteidiger_pokemon.hp - schaden
   angriff_animieren(schaden, verteidiger_pokemon.hp)
 }
